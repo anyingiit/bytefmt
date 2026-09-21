@@ -1,0 +1,36 @@
+# https://pre-commit.com
+# Install once with `pre-commit install`; run manually with `pre-commit run --all-files`.
+# vendor/ is generated; LICENSE is verbatim; the rest is synced by Cloud Foundry CI.
+exclude: ^(vendor/|LICENSE$|NOTICE$|README\.md$|scripts/|\.github/(ISSUE_TEMPLATE/|PULL_REQUEST_TEMPLATE\.md|CONTRIBUTING\.md|TEMPLATE-README\.md))
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: check-added-large-files
+      - id: check-case-conflict
+      - id: check-merge-conflict
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: mixed-line-ending
+        args: [--fix=lf]
+      - id: trailing-whitespace
+        args: [--markdown-linebreak-ext=md]
+  - repo: local
+    hooks:
+      - id: gofmt
+        name: gofmt
+        entry: gofmt -l -w
+        language: system
+        types: [go]
+      - id: go-vet
+        name: go vet
+        entry: go vet ./...
+        language: system
+        types: [go]
+        pass_filenames: false
+      - id: go-test
+        name: go test
+        entry: go test ./...
+        language: system
+        types: [go]
+        pass_filenames: false

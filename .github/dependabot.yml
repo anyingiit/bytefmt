@@ -1,0 +1,12 @@
+# Go module bumps (including vendor/) are already automated by the Cloud Foundry
+# CI pipeline, so Dependabot only keeps the GitHub Actions in this repo current.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      github-actions:
+        patterns:
+          - "*"
