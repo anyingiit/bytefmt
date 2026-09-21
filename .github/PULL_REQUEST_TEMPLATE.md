@@ -1,21 +1,14 @@
-- [ ] Read the [Contributing document](../blob/-/.github/CONTRIBUTING.md).
+<!-- Source: GitHub pull request template (official) — https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/creating-a-pull-request-template-for-your-repository -->
+## Description
 
-Summary
----------------
-<!---
-- Briefly explain why this PR is necessary
-- Provide details of where this request is coming from including links, GitHub Issues, etc..
-- Provide details of prior work (if applicable) including links to commits, github issues, etc...
---->
+<!-- What does this pull request change, and why? -->
 
+## Related issue
 
-Backward Compatibility
----------------
-Breaking Change? **Yes/No**
-<!---
-If this is a breaking change, or modifies currently expected behaviors of core functionality
+Closes #
 
-- Has the change been mitigated to be backwards compatible?
-- Should this feature be considered experimental for a period of time, and allow operators to opt-in?
-- Should this apply immediately to all deployments?
--->
+## Checklist
+
+- [ ] Tests pass locally
+- [ ] `CHANGELOG.md` is updated (if applicable)
+- [ ] Documentation is updated (if applicable)
